@@ -25,14 +25,14 @@ export function SignIn() {
       console.log(data);
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      toast.success("E-mail e senha corretos, seja bem vindo!");
+      toast.success("E-mail e senha corretos, seja bem-vindo!");
     } catch (error) {
       toast.error("E-mail ou senha incorretos, verifique");
     }
   }
   return (
     <>
-      <title>Sign In</title>
+      <title>Login | Rifeirinho</title>
       <div className="flex justify-center p-8">
         <div className="flex w-[350px] flex-col justify-center space-y-4">
           <div className="flex flex-col text-center">

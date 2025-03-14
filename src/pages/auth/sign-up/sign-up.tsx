@@ -1,19 +1,27 @@
 import z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-const signUpForm = z.object({
-  trading_name: z.string().nullable(),
-  name: z.string().nullable(),
-  cnpj: z.number(),
-  cpf: z.number().nullable(),
-  email: z.string().email(),
-  password: z.string(),
-  confirm_password: z.string(),
-});
+const signUpForm = z
+  .object({
+    trading_name: z.string().nonempty("Campo obrigatório."),
+    name: z.string().nonempty("Campo obrigatório."),
+    cnpj: z.number(),
+    cpf: z.string().min(11, "Por favor digite um CPF válido."),
+    email: z.string().email().nonempty("Campo obrigatório").toLowerCase(),
+    password: z.string().min(8, "A senha deve conter no mínimo 8 caracteres."),
+    confirm_password: z
+      .string()
+      .min(8, "A senha deve conter no mínimo 8 caracteres."),
+  })
+  .refine(({ password, confirm_password }) => password === confirm_password, {
+    message: "Senhas não estão iguais, por favor verifique!",
+    path: ["confirm_password"],
+  });
 
 type SignUpForm = z.infer<typeof signUpForm>;
 
@@ -21,8 +29,11 @@ export function SignUp() {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitting },
-  } = useForm<SignUpForm>();
+    watch,
+    formState: { isSubmitting, errors },
+  } = useForm<SignUpForm>({
+    resolver: zodResolver(signUpForm),
+  });
 
   async function handleSignUp(data: SignUpForm) {
     try {
@@ -38,7 +49,7 @@ export function SignUp() {
   }
   return (
     <>
-      <title>Sign In</title>
+      <title>Cadastre-se | Rifeirinho</title>
       <div className="flex justify-center p-8">
         <div className="flex w-[350px] flex-col justify-center space-y-4">
           <div className="flex flex-col text-center">
@@ -61,6 +72,11 @@ export function SignUp() {
                 {...register("trading_name")}
                 className="border-muted-foreground"
               />
+              {errors.trading_name && (
+                <span className="text-sm text-red-500">
+                  {errors.trading_name.message}
+                </span>
+              )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="name">Nome fantasia</Label>
@@ -70,16 +86,26 @@ export function SignUp() {
                 {...register("name")}
                 className="border-muted-foreground"
               />
+              {errors.name && (
+                <span className="text-sm text-red-500">
+                  {errors.name.message}
+                </span>
+              )}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="name">CNPJ ou CPF</Label>
+              <Label htmlFor="cpf">CNPJ ou CPF</Label>
               <Input
-                id="name"
+                id="cpf"
                 type="text"
                 placeholder=""
-                {...register("name")}
+                {...register("cpf")}
                 className="border-muted-foreground"
               />
+              {errors.cpf && (
+                <span className="text-sm text-red-500">
+                  {errors.cpf.message}
+                </span>
+              )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">E-mail</Label>
@@ -89,6 +115,11 @@ export function SignUp() {
                 {...register("email")}
                 className="border-muted-foreground"
               />
+              {errors.email && (
+                <span className="text-sm text-red-500">
+                  {errors.email.message}
+                </span>
+              )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Senha</Label>
@@ -98,15 +129,25 @@ export function SignUp() {
                 {...register("password")}
                 className="border-muted-foreground"
               />
+              {errors.password && (
+                <span className="text-sm text-red-500">
+                  {errors.password.message}
+                </span>
+              )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Confirme a senha</Label>
               <Input
-                id="password"
+                id="confirm_password"
                 type="password"
-                {...register("password")}
+                {...register("confirm_password")}
                 className="border-muted-foreground"
               />
+              {errors.confirm_password && (
+                <span className="text-sm text-red-500">
+                  {errors.confirm_password.message}
+                </span>
+              )}
             </div>
             <Button disabled={isSubmitting}>Entrar no sistema</Button>
           </form>
