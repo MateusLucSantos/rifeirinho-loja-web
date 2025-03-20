@@ -15,6 +15,8 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { useState } from "react";
+
+import Logo from "@/assets/adaptive-icon.svg";
 export function TeamSwitcher({
   teams,
 }: {
@@ -40,7 +42,8 @@ export function TeamSwitcher({
             >
               <div className="bg-chart-5 text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg border-2 border-orange-600">
                 {/* <activeTeam.logo className="size-4" /> */}
-                <span className="text-chart-2 mb-1 text-2xl font-bold">R</span>
+                {/* <span className="text-chart-2 mb-1 text-2xl font-bold">R</span> */}
+                <img src={Logo} alt="" />
               </div>
               <div className="text-chart-2 grid flex-1 text-left leading-tight">
                 <span className="truncate text-lg font-bold">
@@ -68,7 +71,8 @@ export function TeamSwitcher({
               >
                 <div className="flex size-6 items-center justify-center rounded-sm border">
                   {/* <team.logo className="size-4 shrink-0" /> */}
-                  <span className="text-muted-foreground font-bold">R</span>
+                  {/* <span className="text-muted-foreground font-bold">R</span> */}
+                  <img src={Logo} alt="" />
                 </div>
                 {team.name}
                 <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>

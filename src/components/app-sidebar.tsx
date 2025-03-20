@@ -1,10 +1,8 @@
 import {
   ClipboardPenLine,
-  GalleryVerticalEnd,
   Headset,
   Layers,
   MonitorCog,
-  PieChart,
   ShoppingBasket,
   ShoppingCart,
   Wallet,
