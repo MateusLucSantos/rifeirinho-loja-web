@@ -36,16 +36,16 @@ export function SignIn() {
       <div className="flex justify-center p-8">
         <div className="flex w-[350px] flex-col justify-center space-y-4">
           <div className="flex flex-col text-center">
-            <h1 className="text-2xl font-semibold tracking-tight">
-              Acessar o sistema
-            </h1>
-            <p className="text-muted-foreground text-sm">
+            <h1 className="text-foreground text-2xl font-semibold tracking-tight">
               Gerencie sua loja com eficiência
-            </p>
+            </h1>
+            {/* <p className="text-muted-foreground text-sm">
+              Gerencie sua loja com eficiência
+            </p> */}
           </div>
           <form
             onSubmit={handleSubmit(handleSignIn)}
-            className="flex flex-col space-y-4"
+            className="mt-8 flex flex-col space-y-4"
           >
             <div className="space-y-2">
               <Label htmlFor="email">E-mail</Label>
