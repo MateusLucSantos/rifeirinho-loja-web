@@ -43,7 +43,7 @@ const data = {
       items: [
         {
           title: "Clientes",
-          url: "/client",
+          url: "/clients",
         },
         {
           title: "Fornecedores",
