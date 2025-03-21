@@ -43,7 +43,7 @@ export function ClientsTable() {
                 <TableCell>
                   <Button
                     size="xs"
-                    className="bg-sidebar-ring hover:bg-sidebar-ring/80"
+                    className="bg-sidebar-ring hover:bg-sidebar-ring/80 dark:bg-chart-1 dark:hover:bg-sidebar-ring"
                   >
                     <Pencil />
                   </Button>
@@ -51,7 +51,7 @@ export function ClientsTable() {
                 <TableCell>
                   <Button
                     size="xs"
-                    className="bg-destructive hover:bg-destructive/80"
+                    className="bg-destructive hover:bg-destructive/80 dark:bg-destructive dark:hover:bg-red-600/80"
                   >
                     <Trash2 />
                   </Button>
