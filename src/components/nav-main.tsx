@@ -31,12 +31,14 @@ export function NavMain({
   return (
     <SidebarGroup>
       <SidebarMenu>
-        <SidebarMenuButton asChild>
-          <div className="">
-            <Home />
-            <a href="/">Dashboard</a>
-          </div>
-        </SidebarMenuButton>
+        <a href="/">
+          <SidebarMenuButton asChild>
+            <div className="">
+              <Home />
+              Dashboard
+            </div>
+          </SidebarMenuButton>
+        </a>
         {items.map((item) => (
           <Collapsible
             key={item.title}

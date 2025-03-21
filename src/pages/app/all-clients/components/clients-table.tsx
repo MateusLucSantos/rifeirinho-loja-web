@@ -18,6 +18,7 @@ export function ClientsTable() {
             <TableHead className="w-[50px]">id</TableHead>
             <TableHead>Nome</TableHead>
             <TableHead className="w-[160px]">Telefone</TableHead>
+            <TableHead className="w-[340px]"></TableHead>
             <TableHead className="w-[20px]"></TableHead>
             <TableHead className="w-[20px]"></TableHead>
           </TableRow>
@@ -40,6 +41,7 @@ export function ClientsTable() {
                 <TableCell>
                   <h2>(37)9 9988-7766</h2>
                 </TableCell>
+                <TableCell></TableCell>
                 <TableCell>
                   <Button
                     size="xs"
