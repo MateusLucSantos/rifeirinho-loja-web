@@ -30,6 +30,10 @@ interface DataTableProps<TData, TValue> {
   pageSize?: number;
   pageTitles?: string;
   searchFields?: string[];
+  actionButton?: {
+    text: string;
+    onClick: () => void;
+  };
 }
 
 export function DataTable<TData, TValue>({
@@ -38,6 +42,7 @@ export function DataTable<TData, TValue>({
   pageSize = 10,
   pageTitles,
   searchFields = [],
+  actionButton,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -97,7 +102,11 @@ export function DataTable<TData, TValue>({
               />
             </div>
             <div>
-              <Button>Novo Cliente</Button>
+              {actionButton && (
+                <Button onClick={actionButton.onClick}>
+                  {actionButton.text}
+                </Button>
+              )}
             </div>
           </div>
         </header>

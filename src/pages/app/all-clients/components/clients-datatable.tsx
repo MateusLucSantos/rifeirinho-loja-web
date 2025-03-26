@@ -3,6 +3,7 @@ import { DataTable } from "@/components/ui/datatable";
 import { Client } from "../interfaces/client";
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown, Pencil, Trash2 } from "lucide-react";
+import { useNavigate } from "react-router";
 const columns: ColumnDef<Client>[] = [
   {
     accessorKey: "id",
@@ -89,6 +90,12 @@ interface Props {
   clients: Client[];
 }
 export default function ClientDataTable({ clients }: Props) {
+  const navigate = useNavigate();
+
+  const handleNewClient = () => {
+    navigate("/new-client"); // ajuste este path conforme sua estrutura de rotas
+  };
+
   return (
     <DataTable
       columns={columns}
@@ -96,6 +103,10 @@ export default function ClientDataTable({ clients }: Props) {
       pageSize={10}
       pageTitles="Clientes"
       searchFields={["name", "username", "phone"]}
+      actionButton={{
+        text: "Novo Cliente",
+        onClick: () => handleNewClient(),
+      }}
     />
   );
 }

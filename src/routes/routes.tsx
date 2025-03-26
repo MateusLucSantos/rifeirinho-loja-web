@@ -6,7 +6,7 @@ import { Dashboard } from "@/pages/app/dashboard";
 import { SignIn } from "@/pages/auth/sign-in";
 import { SignUp } from "@/pages/auth/sign-up/sign-up";
 import { AllClients } from "@/pages/app/all-clients/all-clients";
-import DataTablePage from "@/pages/app/datatable/page";
+import { NewClient } from "@/pages/app/new-client/new-client";
 // import { ClientRegister } from "@/pages/app/client-register";
 
 export const router = createBrowserRouter([
@@ -16,6 +16,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <Dashboard /> },
       { path: "/clients", element: <AllClients /> },
+      { path: "/new-client", element: <NewClient /> },
     ],
   },
 
