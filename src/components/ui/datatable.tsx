@@ -29,7 +29,6 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
   pageSize?: number;
   pageTitles?: string;
-  searchFields?: string[];
   actionButton?: {
     text: string;
     onClick: () => void;
@@ -41,7 +40,6 @@ export function DataTable<TData, TValue>({
   data,
   pageSize = 10,
   pageTitles,
-  searchFields = [],
   actionButton,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -58,15 +56,6 @@ export function DataTable<TData, TValue>({
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
-    filterFns: {
-      fuzzy: (row, _, search) => {
-        const data = row.original;
-
-        return searchFields.some((field) =>
-          data[field].toLowerCase().includes(search.toLowerCase()),
-        );
-      },
-    },
     state: {
       sorting,
       columnFilters,

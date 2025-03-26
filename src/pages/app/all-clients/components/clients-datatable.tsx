@@ -40,7 +40,7 @@ const columns: ColumnDef<Client>[] = [
     },
   },
   {
-    accessorKey: "username",
+    accessorKey: "nickname",
     header: ({ column }) => {
       return (
         <Button
@@ -53,7 +53,7 @@ const columns: ColumnDef<Client>[] = [
       );
     },
     cell: ({ row }) => {
-      return <div>{row.getValue("username")}</div>;
+      return <div>{row.getValue("nickname")}</div>;
     },
   },
   {
@@ -102,7 +102,6 @@ export default function ClientDataTable({ clients }: Props) {
       data={clients}
       pageSize={10}
       pageTitles="Clientes"
-      searchFields={["name", "username", "phone"]}
       actionButton={{
         text: "Novo Cliente",
         onClick: () => handleNewClient(),
