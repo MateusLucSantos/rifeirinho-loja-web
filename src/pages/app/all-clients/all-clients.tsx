@@ -1,6 +1,5 @@
 // import { ClientsTable } from "./components/clients-table";
 import { useEffect, useState } from "react";
-import { HeaderClient } from "./components/header-client";
 import { Client } from "./interfaces/client";
 import ClientDataTable from "./components/clients-datatable";
 
@@ -19,7 +18,7 @@ export function AllClients() {
   return (
     <div>
       <title>Clientes | Rifeirinho</title>
-      <HeaderClient />
+      {/* <HeaderClient /> */}
       {/* <ClientsTable /> */}
       <ClientDataTable clients={clients} />
     </div>
