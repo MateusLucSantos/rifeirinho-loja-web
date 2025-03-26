@@ -74,7 +74,7 @@ export function DataTable<TData, TValue>({
           <div className="flex items-center justify-between pr-2">
             <div className="flex">
               <h1 className="text-foreground text-lg font-semibold">
-                {pageTitles?.toLocaleUpperCase()}
+                {pageTitles}
               </h1>
             </div>
             <div className="flex items-center justify-center gap-1">

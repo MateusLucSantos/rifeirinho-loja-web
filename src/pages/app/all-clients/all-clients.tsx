@@ -18,8 +18,6 @@ export function AllClients() {
   return (
     <div>
       <title>Clientes | Rifeirinho</title>
-      {/* <HeaderClient /> */}
-      {/* <ClientsTable /> */}
       <ClientDataTable clients={clients} />
     </div>
   );

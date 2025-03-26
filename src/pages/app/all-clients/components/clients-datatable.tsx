@@ -69,16 +69,10 @@ const columns: ColumnDef<Client>[] = [
     cell: () => {
       return (
         <div className="flex justify-center gap-4">
-          <Button
-            size="xs"
-            className="bg-sidebar-ring hover:bg-sidebar-ring/80 dark:bg-chart-1 dark:hover:bg-sidebar-ring h-6 w-6"
-          >
+          <Button className="bg-sidebar-ring hover:bg-sidebar-ring/80 dark:bg-chart-1 dark:hover:bg-sidebar-ring h-6 w-6">
             <Pencil />
           </Button>
-          <Button
-            size="xs"
-            className="bg-destructive hover:bg-destructive/80 dark:bg-destructive h-6 w-6 dark:hover:bg-red-600/80"
-          >
+          <Button className="bg-destructive hover:bg-destructive/80 dark:bg-destructive h-6 w-6 dark:hover:bg-red-600/80">
             <Trash2 />
           </Button>
         </div>
@@ -93,7 +87,7 @@ export default function ClientDataTable({ clients }: Props) {
   const navigate = useNavigate();
 
   const handleNewClient = () => {
-    navigate("/new-client"); // ajuste este path conforme sua estrutura de rotas
+    navigate("/novo-cliente"); // ajuste este path conforme sua estrutura de rotas
   };
 
   return (
