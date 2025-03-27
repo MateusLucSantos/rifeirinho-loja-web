@@ -55,7 +55,6 @@ export function FormClient() {
                 type="text"
                 id="nickname"
                 {...register("nickname")}
-                value=""
               />
             </div>
             <div className="flex flex-col space-y-2">
@@ -72,7 +71,6 @@ export function FormClient() {
                 type="text"
                 id="name"
                 {...register("name")}
-                value=""
               />
             </div>
             <div className="flex w-[190px] flex-col space-y-2">
@@ -82,7 +80,6 @@ export function FormClient() {
                 type="text"
                 id="cpf"
                 {...register("cpf")}
-                value=""
               />
             </div>
           </div>
@@ -95,7 +92,6 @@ export function FormClient() {
                 type="text"
                 id="email"
                 {...register("email")}
-                value=""
               />
             </div>
             <div className="flex flex-col space-y-2">
@@ -105,7 +101,6 @@ export function FormClient() {
                 type="text"
                 id="phone"
                 {...register("phone")}
-                value=""
               />
             </div>
           </div>
@@ -117,7 +112,6 @@ export function FormClient() {
                 type="text"
                 id="address"
                 {...register("address")}
-                value=""
               />
             </div>
             <div className="flex w-[80px] flex-col space-y-2">
@@ -127,7 +121,6 @@ export function FormClient() {
                 type="text"
                 id="number_address"
                 {...register("number_address")}
-                value=""
               />
             </div>
             <div className="flex w-[200px] flex-col space-y-2">
@@ -137,7 +130,6 @@ export function FormClient() {
                 type="text"
                 id="complement"
                 {...register("complement")}
-                value=""
               />
             </div>
           </div>
@@ -149,7 +141,6 @@ export function FormClient() {
                 type="text"
                 id="neighborhood"
                 {...register("neighborhood")}
-                value=""
               />
             </div>
             <div className="flex w-[200px] flex-col space-y-2">
@@ -159,7 +150,6 @@ export function FormClient() {
                 type="text"
                 id="city"
                 {...register("city")}
-                value=""
               />
             </div>
             <div className="flex w-[70px] flex-col space-y-2">
@@ -169,7 +159,6 @@ export function FormClient() {
                 type="text"
                 id="uf"
                 {...register("uf")}
-                value=""
               />
             </div>
             <div className="flex w-[120px] flex-col space-y-2">
@@ -179,7 +168,6 @@ export function FormClient() {
                 type="text"
                 id="zip_code"
                 {...register("zip_code")}
-                value=""
               />
             </div>
           </div>
