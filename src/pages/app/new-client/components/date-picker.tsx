@@ -75,7 +75,7 @@ export function DatePicker({
           {date ? (
             format(date, "PPP", { locale: ptBR })
           ) : (
-            <span>Pick a date</span>
+            <span>Escolha a data</span>
           )}
         </Button>
       </PopoverTrigger>
