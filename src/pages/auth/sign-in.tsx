@@ -54,17 +54,11 @@ export function SignIn() {
                 type="email"
                 placeholder="rifeirinho@email.com"
                 {...register("email")}
-                className="border-muted-foreground"
               />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Senha</Label>
-              <Input
-                id="password"
-                type="password"
-                {...register("password")}
-                className="border-muted-foreground"
-              />
+              <Input id="password" type="password" {...register("password")} />
             </div>
             <Button disabled={isSubmitting}>Entrar no sistema</Button>
           </form>

@@ -70,7 +70,6 @@ export function SignUp() {
                 id="trading_name"
                 type="text"
                 {...register("trading_name")}
-                className="border-muted-foreground"
               />
               {errors.trading_name && (
                 <span className="text-sm text-red-500">
@@ -80,12 +79,7 @@ export function SignUp() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="name">Nome fantasia</Label>
-              <Input
-                id="name"
-                type="text"
-                {...register("name")}
-                className="border-muted-foreground"
-              />
+              <Input id="name" type="text" {...register("name")} />
               {errors.name && (
                 <span className="text-sm text-red-500">
                   {errors.name.message}
@@ -94,13 +88,7 @@ export function SignUp() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="cpf">CNPJ ou CPF</Label>
-              <Input
-                id="cpf"
-                type="text"
-                placeholder=""
-                {...register("cpf")}
-                className="border-muted-foreground"
-              />
+              <Input id="cpf" type="text" placeholder="" {...register("cpf")} />
               {errors.cpf && (
                 <span className="text-sm text-red-500">
                   {errors.cpf.message}
@@ -109,12 +97,7 @@ export function SignUp() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">E-mail</Label>
-              <Input
-                id="email"
-                type="email"
-                {...register("email")}
-                className="border-muted-foreground"
-              />
+              <Input id="email" type="email" {...register("email")} />
               {errors.email && (
                 <span className="text-sm text-red-500">
                   {errors.email.message}
@@ -123,12 +106,7 @@ export function SignUp() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Senha</Label>
-              <Input
-                id="password"
-                type="password"
-                {...register("password")}
-                className="border-muted-foreground"
-              />
+              <Input id="password" type="password" {...register("password")} />
               {errors.password && (
                 <span className="text-sm text-red-500">
                   {errors.password.message}
@@ -141,7 +119,6 @@ export function SignUp() {
                 id="confirm_password"
                 type="password"
                 {...register("confirm_password")}
-                className="border-muted-foreground"
               />
               {errors.confirm_password && (
                 <span className="text-sm text-red-500">
