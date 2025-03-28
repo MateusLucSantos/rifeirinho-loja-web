@@ -1,16 +1,16 @@
-import { DatePicker } from "@/components/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { DatePicker } from "@/components/date-picker";
 
 const schema = z.object({
   id: z.string().nonempty(),
   name: z.string().nonempty(),
   cpf: z.string().regex(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/),
-  nickname: z.string().nonempty(),
+  supplier: z.string().nonempty(),
   email: z.string().email(),
   phone: z.string().regex(/^\d{10}$/),
   address: z.string().nonempty(),
@@ -23,7 +23,7 @@ const schema = z.object({
 });
 type ClientForm = z.infer<typeof schema>;
 
-export function FormClient() {
+export function FormSupplier() {
   const { register, handleSubmit, watch, formState } = useForm<ClientForm>({
     resolver: zodResolver(schema),
   });
@@ -49,12 +49,12 @@ export function FormClient() {
               />
             </div>
             <div className="flex w-[300px] flex-col space-y-2 lg:w-[500px]">
-              <Label htmlFor="nickname">Apelido</Label>
+              <Label htmlFor="supplier">Fornecedor</Label>
               <Input
                 className="min-w-[120px]"
                 type="text"
-                id="nickname"
-                {...register("nickname")}
+                id="supplier"
+                {...register("supplier")}
               />
             </div>
             <div className="flex flex-col space-y-2">

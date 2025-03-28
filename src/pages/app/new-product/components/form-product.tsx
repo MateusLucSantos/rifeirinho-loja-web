@@ -23,7 +23,7 @@ const schema = z.object({
 });
 type ClientForm = z.infer<typeof schema>;
 
-export function FormClient() {
+export function FormProduct() {
   const { register, handleSubmit, watch, formState } = useForm<ClientForm>({
     resolver: zodResolver(schema),
   });

@@ -47,11 +47,11 @@ const data = {
         },
         {
           title: "Fornecedores",
-          url: "#",
+          url: "/fornecedores",
         },
         {
           title: "Produtos",
-          url: "#",
+          url: "/produtos",
         },
       ],
     },
